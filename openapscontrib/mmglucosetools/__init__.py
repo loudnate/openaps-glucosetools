@@ -37,7 +37,7 @@ def display_device(device):
 # agp as a vendor.  Return a list of classes which inherit from Use,
 # or are compatible with it:
 def get_uses(device, config):
-    return []
+    return [clean, latest]
 
 
 def _opt_date(timestamp):
