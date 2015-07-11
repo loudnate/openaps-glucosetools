@@ -37,6 +37,17 @@ class CleanTestCase(unittest.TestCase):
                     "op": 75
                 },
                 {
+                    "body": "63",
+                    "packet_size": 5,
+                    "amount": 99,
+                    "name": "CalBGForGH",
+                    "raw": "53-cd-0a-8f-63",
+                    "date": "2015-07-06T18:07:00",
+                    "date_type": "minSpecific",
+                    "_tell": 18,
+                    "op": "0x0e"
+                },
+                {
                     "name": "GlucoseSensorData",
                     "date_type": "prevTimestamp",
                     "_tell": 12,
@@ -98,15 +109,6 @@ class CleanTestCase(unittest.TestCase):
                     "date": "2015-07-06T17:29:00",
                     "packet_size": 0,
                     "op": 66
-                },
-                {
-                    "name": "GlucoseSensorData",
-                    "date_type": "prevTimestamp",
-                    "_tell": 43,
-                    "sgv": 132,
-                    "date": "2015-07-06T17:24:00",
-                    "packet_size": 0,
-                    "op": 66
                 }
             ],
             cleaned[0:10]
@@ -114,3 +116,7 @@ class CleanTestCase(unittest.TestCase):
 
         for entry in cleaned:
             self.assertIn(entry['name'], ('GlucoseSensorData', 'CalBGForGH'))
+
+
+if __name__ == "__main__":
+    unittest.main()
