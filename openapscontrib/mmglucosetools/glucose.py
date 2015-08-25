@@ -23,5 +23,5 @@ def clean(glucose_entries):
         return sorted(cleaned, key=lambda x: x['date'], reverse=True)
     elif 'system_time' in cleaned[0]:
         return sorted(cleaned, key=lambda x: x['display_time'], reverse=True)
-    else
+    else:
         print "Something is amiss ..."
