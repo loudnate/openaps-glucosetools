@@ -1,5 +1,5 @@
 def _filter_entry(entry):
-    if 'date' in entry:
+    if ('date' in entry) or ('system_time' in entry):
         if 'sgv' in entry and entry['sgv'] > 0:
             return True
         elif 'amount' in entry and entry['amount'] > 0:
