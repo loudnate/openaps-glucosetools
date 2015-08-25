@@ -4,7 +4,7 @@ def _filter_entry(entry):
             return True
         elif 'amount' in entry and entry['amount'] > 0:
             return True
-        elif 'glucose' in entry and entry['glucose'] > 0:
+        elif 'glucose' in entry and entry['glucose'] > 35:
             return True
 
     return False
