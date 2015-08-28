@@ -10,8 +10,7 @@ def get_file_at_path(path):
 
 
 class CleanTestCase(unittest.TestCase):
-    def test_clean_values(self):
-
+    def test_clean_values_mm(self):
         # test for mm
         with open(get_file_at_path('fixtures/iter_glucose_mm.json')) as fp:
             glucose = json.load(fp)
@@ -119,6 +118,7 @@ class CleanTestCase(unittest.TestCase):
         for entry in cleaned:
             self.assertIn(entry['name'], ('GlucoseSensorData', 'CalBGForGH'))
 
+    def test_clean_values_dex(self):
         # test for dex
         with open(get_file_at_path('fixtures/iter_glucose_dex.json')) as fp:
             glucose = json.load(fp)

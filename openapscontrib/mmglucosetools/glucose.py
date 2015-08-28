@@ -19,9 +19,4 @@ def clean(glucose_entries):
     :rtype: list(dict)
     """
     cleaned = filter(_filter_entry, glucose_entries)
-    if 'date' in cleaned[0]:
-        return sorted(cleaned, key=lambda x: x['date'], reverse=True)
-    elif 'system_time' in cleaned[0]:
-        return sorted(cleaned, key=lambda x: x['display_time'], reverse=True)
-    else:
-        print "Something is amiss ..."
+    return sorted(cleaned, key=lambda x: x.get('date', x.get('display_time')), reverse=True)
