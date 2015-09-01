@@ -10,8 +10,9 @@ def get_file_at_path(path):
 
 
 class CleanTestCase(unittest.TestCase):
-    def test_clean_values(self):
-        with open(get_file_at_path('fixtures/iter_glucose.json')) as fp:
+    def test_clean_values_mm(self):
+        # test for mm
+        with open(get_file_at_path('fixtures/iter_glucose_mm.json')) as fp:
             glucose = json.load(fp)
 
         cleaned = clean(glucose)
@@ -116,6 +117,79 @@ class CleanTestCase(unittest.TestCase):
 
         for entry in cleaned:
             self.assertIn(entry['name'], ('GlucoseSensorData', 'CalBGForGH'))
+
+    def test_clean_values_dex(self):
+        # test for dex
+        with open(get_file_at_path('fixtures/iter_glucose_dex.json')) as fp:
+            glucose = json.load(fp)
+
+        cleaned = clean(glucose)
+
+        self.assertListEqual(
+            [
+              {
+                "trend_arrow": "FLAT", 
+                "system_time": "2015-08-25T18:05:23", 
+                "display_time": "2015-08-25T10:06:15", 
+                "glucose": 86
+              },
+              {
+                "trend_arrow": "FLAT", 
+                "system_time": "2015-08-25T18:00:23", 
+                "display_time": "2015-08-25T10:01:15", 
+                "glucose": 89
+              },  
+              {
+                "trend_arrow": "FLAT", 
+                "system_time": "2015-08-25T15:45:23", 
+                "display_time": "2015-08-25T07:46:15", 
+                "glucose": 94
+              },
+              {
+                "trend_arrow": "FLAT", 
+                "system_time": "2015-08-25T15:40:23", 
+                "display_time": "2015-08-25T07:41:15", 
+                "glucose": 94
+              },
+              {
+                "trend_arrow": "FLAT", 
+                "system_time": "2015-08-25T15:35:23", 
+                "display_time": "2015-08-25T07:36:15", 
+                "glucose": 97
+              }, 
+              {
+                "trend_arrow": "NOT_COMPUTABLE", 
+                "system_time": "2015-08-21T02:35:38", 
+                "display_time": "2015-08-20T18:36:30", 
+                "glucose": 134
+              },
+              {
+                "trend_arrow": "NOT_COMPUTABLE", 
+                "system_time": "2015-08-21T02:30:38", 
+                "display_time": "2015-08-20T18:31:30", 
+                "glucose": 132
+              }, 
+              {
+                "trend_arrow": "NOT_COMPUTABLE", 
+                "system_time": "2015-08-21T02:25:38", 
+                "display_time": "2015-08-20T18:26:30", 
+                "glucose": 129
+              },
+              {
+                "trend_arrow": "NOT_COMPUTABLE", 
+                "system_time": "2015-08-21T01:30:39", 
+                "display_time": "2015-08-20T17:31:30", 
+                "glucose": 245
+              }, 
+              {
+                "trend_arrow": "45_UP", 
+                "system_time": "2015-08-21T01:25:39", 
+                "display_time": "2015-08-20T17:26:30", 
+                "glucose": 242
+              }
+            ],
+            cleaned[0:10]
+        )    
 
 
 if __name__ == "__main__":
