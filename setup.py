@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-long_description ='''openaps MMGlucoseTools plugin
+long_description ='''openaps GlucoseTools plugin
 ==============================
 This package is a vendor plugin for openaps that provides tools for cleaning and
 parsing glucose data.
@@ -9,17 +9,17 @@ parsing glucose data.
 requires = ['openaps', 'python-dateutil']
 
 __version__ = None
-exec(open('openapscontrib/mmglucosetools/version.py').read())
+exec(open('openapscontrib/glucosetools/version.py').read())
 
 setup(
-    name='openapscontrib.mmglucosetools',
+    name='openapscontrib.glucosetools',
     version=__version__,
-    url='http://github.com/loudnate/openaps-mmglucosetools',
-    download_url='http://pypi.python.org/pypi/openapscontrib.mmglucosetools',
+    url='http://github.com/loudnate/openaps-glucosetools',
+    download_url='http://pypi.python.org/pypi/openapscontrib.glucosetools',
     license='MIT',
     author='Nathan Racklyeft',
     author_email='loudnate+pypi@gmail.com',
-    description='openaps mmglucosetools plugin',
+    description='openaps glucosetools plugin',
     long_description=long_description,
     classifiers=[
         'Development Status :: 3 - Alpha',
