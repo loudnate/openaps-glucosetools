@@ -1,5 +1,5 @@
-# mmglucosetools
-An [openaps](https://github.com/openaps/openaps) plugin for cleaning and parsing medtronic glucose sensor data
+# openaps glucosetools
+An [openaps](https://github.com/openaps/openaps) plugin for cleaning and parsing glucose sensor data
 
 ## Motivation
 Interpreting recent historical events is a foundational component in any [openaps](https://github.com/openaps/openaps) project, and this plugin aspires to be a central place for documenting and testing the parsing of glucose sensor data.
@@ -8,7 +8,7 @@ Interpreting recent historical events is a foundational component in any [openap
 ### Installing from pypi
 
 ```bash
-$ sudo easy_install openapscontrib.mmglucosetools
+$ sudo easy_install openapscontrib.glucosetools
 ```
 
 ### Installing from source for development
@@ -19,8 +19,8 @@ $ python setup.py develop
 
 ### Adding to your openaps project
 ```bash
-$ openaps vendor add openapscontrib.mmglucosetools
-$ openaps device add glucose mmglucosetools
+$ openaps vendor add openapscontrib.glucosetools
+$ openaps device add glucose glucosetools
 ```
 
 ## Usage
@@ -33,13 +33,13 @@ optional arguments:
   -h, --help  show this help message and exit
 
 ## Device glucose:
-  vendor openapscontrib.mmglucosetools
-  
-  mmglucosetools - tools for cleaning, condensing, and reformatting history data
-  
-  
-  
-      
+  vendor openapscontrib.glucosetools
+
+  glucosetools - tools for cleaning, condensing, and reformatting history data
+
+
+
+
 
   USAGE       Usage Details
     clean     Resolve inconsistencies and ordering from a sequence of glucose
@@ -65,9 +65,9 @@ optional arguments:
 Contributions are welcome and encouraged in the form of bugs and pull requests.
 
 ### Testing
- 
+
 Unit tests can be run manually via setuptools.
- 
+
 ```bash
 $ python setup.py test
 ```

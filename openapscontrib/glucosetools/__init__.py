@@ -1,5 +1,5 @@
 """
-mmglucosetools - tools for cleaning, condensing, and reformatting history data
+glucosetools - tools for cleaning, condensing, and reformatting history data
 
 
 """
