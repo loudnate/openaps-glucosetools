@@ -1,6 +1,8 @@
 # openaps glucosetools
 An [openaps](https://github.com/openaps/openaps) plugin for cleaning and parsing glucose sensor data
 
+[![Build Status](https://travis-ci.org/loudnate/openaps-glucosetools.svg)](https://travis-ci.org/loudnate/openaps-glucosetools)
+
 ## Motivation
 Interpreting recent historical events is a foundational component in any [openaps](https://github.com/openaps/openaps) project, and this plugin aspires to be a central place for documenting and testing the parsing of glucose sensor data.
 
@@ -49,16 +51,20 @@ optional arguments:
 
 Use the command help menu to see available arguments.
 ```bash
-$ openaps use glucose latest -h
-usage: openaps-use glucose latest [-h] [infile]
+$ openaps use glucose clean -h
+usage: openaps-use glucose clean [-h] [infile]
 
-Returns the latest glucose entry from a sequence of glucose data
+Resolve inconsistencies and ordering from a sequence of glucose data
 
 positional arguments:
   infile      JSON-encoded glucose data
 
 optional arguments:
   -h, --help  show this help message and exit
+
+Tasks performed by this pass:
+ - Removes unknown and erroneous data entries
+ - Re-sorts all known values in reverse-chronological order
 ```
 
 ## Contributing
