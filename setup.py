@@ -6,7 +6,7 @@ This package is a vendor plugin for openaps that provides tools for cleaning and
 parsing glucose data.
 '''
 
-requires = ['openaps', 'python-dateutil']
+requires = ['openaps']
 
 __version__ = None
 exec(open('openapscontrib/glucosetools/version.py').read())

@@ -6,7 +6,6 @@ glucosetools - tools for cleaning, condensing, and reformatting history data
 from .version import __version__
 
 import argparse
-from dateutil.parser import parse
 import json
 
 from openaps.uses.use import Use
@@ -38,18 +37,6 @@ def display_device(device):
 # or are compatible with it:
 def get_uses(device, config):
     return [clean, latest]
-
-
-def _opt_date(timestamp):
-    """Parses a date string if defined
-
-    :param timestamp: The date string to parse
-    :type timestamp: basestring
-    :return: A datetime object if a timestamp was specified
-    :rtype: datetime.datetime|NoneType
-    """
-    if timestamp:
-        return parse(timestamp)
 
 
 def _opt_json_file(filename):
