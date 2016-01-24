@@ -9,6 +9,20 @@ def _filter_entry(entry):
 
     return False
 
+def _rename_entry(entry):
+    if 'sgv' in entry:
+      entry['glucose'] = entry['sgv']
+      del entry['sgv']
+
+    if 'amount' in entry:
+      entry['glucose'] = entry['amount']
+      del entry['amount']
+
+    if 'date' in entry:
+      entry['display_time'] = entry['date']
+      del entry['date']
+
+    return entry
 
 def clean(glucose_entries):
     """Resolve inconsistencies and ordering from a sequence of pump history
@@ -19,4 +33,5 @@ def clean(glucose_entries):
     :rtype: list(dict)
     """
     cleaned = filter(_filter_entry, glucose_entries)
-    return sorted(cleaned, key=lambda x: x.get('date', x.get('display_time')), reverse=True)
+    renamed = map(_rename_entry, cleaned)
+    return sorted(renamed, key=lambda x: x.get('date', x.get('display_time')), reverse=True)
